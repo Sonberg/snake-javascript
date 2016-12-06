@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Snake</title>
+    <style media="screen">
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .score {
+            position: fixed;
+            left: 28px;
+            top: 28px;
+            font-weight: bold;
+            font-size: 4em;
+            color: white;
+            font-family: monospace;
+        }
+        
+        #freeze {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            left: 0px;
+            bottom: 0px;
+            outline: none;
+            overflow: hidden;
+            background: rgba(88, 127, 160, 0);
+            display: none;
+        }
+        
+        .paused {
+          display: block !important;
+        }
+        
+        .space {
+            background: none;
+            border: 2px solid white;
+            border-radius: 32px;
+            display: table;
+            color: white;
+            font-family: monospace;
+            padding: 1em 2em;
+            font-size: x-large;
+            vertical-align: middle;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 35%;
+            bottom: 0;
+            right: 0;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/p5.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/addons/p5.dom.min.js"></script>
+    <script type="text/javascript" src="snake.js"></script>
+    <script type="text/javascript" src="draw.js"></script>
+    <div class="score" style="display: none">0</div>
+    <div id="freeze" class="paused"><div class="space">Tryck mellanslag för att spela</div></div>
+</body>
+</html>
