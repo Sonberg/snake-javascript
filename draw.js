@@ -21,8 +21,7 @@ function setup() {
     window.onresize = function(event) {
       $("#freeze").addClass("paused");
       noLoop();
-      $("canvas").width(window.innerWidth);
-      $("canvas").height(window.innerHeight);
+      resizeCanvas(window.innerWidth, window.innerHeight);
     };
 }
 
