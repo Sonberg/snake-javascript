@@ -11,14 +11,28 @@
             overflow: hidden;
         }
         
+        #death {
+          vertical-align: middle;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          overflow: auto;
+          text-align: center;
+          font-weight: bold;
+          font-size: 4em;
+          color: white;
+          font-family: monospace;
+        }
+        
         .score {
-            position: fixed;
-            left: 28px;
-            top: 28px;
-            font-weight: bold;
-            font-size: 4em;
-            color: white;
-            font-family: monospace;
+            font-size: 5em;
+        }
+        
+        .text {
+          font-size: x-large;
         }
         
         #freeze {
@@ -64,7 +78,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/addons/p5.dom.min.js"></script>
     <script type="text/javascript" src="snake.js"></script>
     <script type="text/javascript" src="draw.js"></script>
-    <div class="score" style="display: none">0</div>
+    <div id="death" style="display: none">
+      <div class="score" style="">0</div>
+      Game Over
+      <div class="text">Tryck mellanslag för att spela igen</div>
+    </div>
     <div id="freeze" class="paused"><div class="space">Tryck mellanslag för att spela</div></div>
 </body>
 </html>

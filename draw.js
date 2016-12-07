@@ -1,5 +1,11 @@
 var s,
     food,
+    foodScl = 1.4,
+    foodColor = {
+      r: 255,
+      g: 0,
+      b: 100
+    },
     scl = 10,
     w = window.innerWidth,
     h = window.innerHeight;
@@ -20,8 +26,8 @@ function draw() {
   s.update();
   
   // Draw food
-  fill(255, 0, 100);
-  rect(food.x, food.y, scl, scl);
+  fill(foodColor.r, foodColor.g, foodColor.b);
+  rect(food.x, food.y, scl*foodScl, scl*foodScl);
 }
 
 function keyPressed(e) {
@@ -42,10 +48,14 @@ function keyPressed(e) {
       s.direction(1, 0);
     }
   }
-  console.log(e);
   if (keyCode === 32) {
-    if ($("#freeze").hasClass("paused")) {
+    if ($("#freeze").hasClass("paused") || $("#death").is(":visible")) {
       $("#freeze").removeClass("paused");
+      
+      if ($("#death").is(":visible")) {
+        $("#death").fadeOut();
+        s.reset();
+      }
       loop();
     } else {
       $("#freeze").addClass("paused");
@@ -58,9 +68,13 @@ function keyPressed(e) {
 function randomLocation() {
   var cols = floor(width/scl);
   var rows = floor(height/scl);
+  foodColor.r = Math.floor(Math.random() * 256);
+  foodColor.b = Math.floor(Math.random() * 256);
+  foodColor.g = Math.floor(Math.random() * 256);
   food = createVector(floor(random(cols)), floor(random(rows)));
   food.mult(scl);
-  //food = {x: floor(random(600/scl)), y: floor(random(600/scl))};
+  food.x = constrain(food.x, scl*1*foodScl, width - scl*2*foodScl);
+  food.y = constrain(food.y, scl*1*foodScl, height - scl*2*foodScl);
 }
 
 /*
