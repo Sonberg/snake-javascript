@@ -9,6 +9,7 @@ var s,
     scl = 10,
     w = window.innerWidth,
     h = window.innerHeight;
+    
 
 function setup() {
     s = new Snake();
@@ -16,6 +17,13 @@ function setup() {
     frameRate(30);
     noLoop();
     randomLocation();
+    
+    window.onresize = function(event) {
+      $("#freeze").addClass("paused");
+      noLoop();
+      $("canvas").width(window.innerWidth);
+      $("canvas").height(window.innerHeight);
+    };
 }
 
 function draw() {  
