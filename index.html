@@ -24,6 +24,7 @@
             font-weight: bold;
             font-size: 4em;
             color: white;
+            z-index: 100;
             font-family: monospace;
         }
         
@@ -52,11 +53,12 @@
         }
         
         .space {
-            background: none;
+          z-index: 100;
+            background: white;
+            color: black;
             border: 2px solid white;
             border-radius: 32px;
             display: table;
-            color: white;
             font-family: monospace;
             padding: 1em 2em;
             font-size: x-large;
@@ -64,7 +66,8 @@
             margin: auto;
             position: absolute;
             top: 0;
-            left: 35%;
+            left: 0;
+            width: 361px;
             bottom: 0;
             right: 0;
             overflow: auto;
