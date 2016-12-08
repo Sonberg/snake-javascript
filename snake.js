@@ -20,7 +20,7 @@ function Snake() {
     }
 
     this.eat = function(pos) {
-        if (this.x < pos.x + scl*foodScl && this.x + scl > pos.x && this.y < pos.y + scl*foodScl && scl + this.y > pos.y) {
+        if (this.x < pos.x + scl && this.x + scl > pos.x && this.y < pos.y + scl && scl + this.y > pos.y) {
             this.total++;
             $(".score").html(this.total);
             return true;
