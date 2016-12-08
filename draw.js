@@ -1,15 +1,16 @@
 var s,
     food,
-    foodScl = 1.4,
     foodColor = {
       r: 255,
       g: 0,
       b: 100
     },
-    scl = 10,
+    scl = 14,
     w = window.innerWidth,
     h = window.innerHeight;
     
+  window.$ = window.jQuery = require('jquery');
+  console.log( [$, jQuery ]);
 
 function setup() {
     s = new Snake();
@@ -34,7 +35,7 @@ function draw() {
   
   // Draw food
   fill(foodColor.r, foodColor.g, foodColor.b);
-  rect(food.x, food.y, scl*foodScl, scl*foodScl);
+  rect(food.x, food.y, scl, scl);
 }
 
 function keyPressed(e) {
@@ -80,8 +81,8 @@ function randomLocation() {
   foodColor.g = Math.floor(Math.random() * 256);
   food = createVector(floor(random(cols)), floor(random(rows)));
   food.mult(scl);
-  food.x = constrain(food.x, scl*1*foodScl, width - scl*2*foodScl);
-  food.y = constrain(food.y, scl*1*foodScl, height - scl*2*foodScl);
+  food.x = constrain(food.x, scl, width - scl*2);
+  food.y = constrain(food.y, scl, height - scl*2);
 }
 
 /*
