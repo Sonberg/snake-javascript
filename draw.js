@@ -8,9 +8,7 @@ var s,
     scl = 14,
     w = window.innerWidth,
     h = window.innerHeight;
-    
-  window.$ = window.jQuery = require('jquery').globalPaths.push(__dirname + '/node_modules');
-  console.log( [$, jQuery ]);
+
 
 function setup() {
     s = new Snake();
