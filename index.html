@@ -12,19 +12,19 @@
         }
         
         #death {
-          vertical-align: middle;
-          margin: auto;
-          position: absolute;
-          top: 10%;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          overflow: auto;
-          text-align: center;
-          font-weight: bold;
-          font-size: 4em;
-          color: white;
-          font-family: monospace;
+            vertical-align: middle;
+            margin: auto;
+            position: absolute;
+            top: 10%;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            overflow: auto;
+            text-align: center;
+            font-weight: bold;
+            font-size: 4em;
+            color: white;
+            font-family: monospace;
         }
         
         .score {
@@ -32,7 +32,7 @@
         }
         
         .text {
-          font-size: x-large;
+            font-size: x-large;
         }
         
         #freeze {
@@ -48,7 +48,7 @@
         }
         
         .paused {
-          display: block !important;
+            display: block !important;
         }
         
         .space {
@@ -70,8 +70,16 @@
             overflow: auto;
         }
     </style>
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
     <script type="text/javascript" src="jquery.min.js"></script>
-    <script>window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');</script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
 </head>
 
 <body>
@@ -80,10 +88,13 @@
     <script type="text/javascript" src="snake.js"></script>
     <script type="text/javascript" src="draw.js"></script>
     <div id="death" style="display: none">
-      <div class="score" style="">0</div>
-      Game Over
-      <div class="text">Tryck mellanslag för att spela igen</div>
+        <div class="score" style="">0</div>
+        Game Over
+        <div class="text">Tryck mellanslag för att spela igen</div>
     </div>
-    <div id="freeze" class="paused"><div class="space">Tryck mellanslag för att spela</div></div>
+    <div id="freeze" class="paused">
+        <div class="space">Tryck mellanslag för att spela</div>
+    </div>
 </body>
+
 </html>
