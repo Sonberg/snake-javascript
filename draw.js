@@ -7,7 +7,7 @@ var s,
     },
     scl = 14,
     w = window.innerWidth,
-    h = window.innerHeight;
+    h = window.innerHeight - 52;
 
 
 function setup() {
@@ -20,7 +20,7 @@ function setup() {
     window.onresize = function(event) {
       $("#freeze").addClass("paused");
       noLoop();
-      resizeCanvas(window.innerWidth, window.innerHeight);
+      resizeCanvas(window.innerWidth, window.innerHeight - 52);
     };
 }
 
