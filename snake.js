@@ -1,6 +1,6 @@
 function Snake() {
-    this.x = 1;
-    this.y = 1;
+    this.x = offset;
+    this.y = offset;
     this.xspeed = 1;
     this.yspeed = 0;
     this.total = 0;
@@ -38,8 +38,8 @@ function Snake() {
     }
     
     this.reset = function() {
-      this.x = 1;
-      this.y = 1;
+      this.x = offset;
+      this.y = offset;
       this.xspeed = 1;
       this.yspeed = 0;
       this.total = 0;
