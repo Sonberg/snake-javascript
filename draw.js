@@ -6,8 +6,9 @@ var s,
       b: 100
     },
     scl = 14,
+    offset = 52,
     w = window.innerWidth,
-    h = window.innerHeight - 52;
+    h = window.innerHeight;
 
 
 function setup() {
@@ -20,7 +21,7 @@ function setup() {
     window.onresize = function(event) {
       $("#freeze").addClass("paused");
       noLoop();
-      resizeCanvas(window.innerWidth, window.innerHeight - 52);
+      resizeCanvas(window.innerWidth, window.innerHeight);
     };
 }
 
@@ -79,8 +80,8 @@ function randomLocation() {
   foodColor.g = Math.floor(Math.random() * 256);
   food = createVector(floor(random(cols)), floor(random(rows)));
   food.mult(scl);
-  food.x = constrain(food.x, scl, width - scl*2);
-  food.y = constrain(food.y, scl, height - scl*2);
+  food.x = constrain(food.x, scl + offset, width - scl*2 + offset);
+  food.y = constrain(food.y, scl + offset, height - scl*2 + offset);
 }
 
 /*
